@@ -9,7 +9,7 @@
     />
     <title>SELENE</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="icon" href="./img/logo.png" type="image/png" />
   </head>
 
   <body>
@@ -18,7 +18,7 @@
         <span class="brand-mark" aria-hidden="true">SE</span>
         <span>
           <strong>SELENE</strong>
-          <small>Monitoramento Ambiental</small>
+          <small>Monitoramento ambiental</small>
         </span>
       </a>
 
@@ -30,6 +30,8 @@
           <li><a href="#mapa">Mapa</a></li>
           <li><a href="#telemetria">Telemetria</a></li>
           <li><a href="#historico">Histórico</a></li>
+          <li><a href="#simulacao">Simulação</a></li>
+          <li><a href="#administracao">Admin</a></li>
         </ul>
       </nav>
     </header>
@@ -48,12 +50,12 @@
 
         <aside class="hero-panel" aria-label="Resumo operacional">
           <div>
-            <span>Risco Atual</span>
-            <strong>Alto</strong>
+            <span>Risco atual</span>
+            <strong>Médio</strong>
           </div>
           <div>
-            <span>Última Atualização</span>
-            <strong>Há 5 Minutos</strong>
+            <span>Última atualização</span>
+            <strong>2 min</strong>
           </div>
         </aside>
       </section>
@@ -67,22 +69,32 @@
         <div class="access-layout">
           <article class="access-panel">
             <h3>Acesso à plataforma</h3>
-            <form class="mini-form" action="#" method="get">
-              <label>
+            <form class="mini-form" action="#" method="post">
+              <label for="email">
                 E-mail
                 <input
+                  id="email"
                   type="email"
                   name="email"
                   placeholder="usuario@selene.app"
+                  autocomplete="email"
+                  required
                 />
               </label>
-              <label>
+              <label for="senha">
                 Senha
-                <input type="password" name="senha" placeholder="••••••••" />
+                <input
+                  id="senha"
+                  type="password"
+                  name="senha"
+                  placeholder="••••••••"
+                  autocomplete="current-password"
+                  required
+                />
               </label>
               <div class="form-actions">
                 <button class="button primary" type="submit">Entrar</button>
-                <a href="#requisitos">Recuperar senha</a>
+                <a href="#acesso">Recuperar senha</a>
               </div>
             </form>
           </article>
@@ -93,6 +105,19 @@
         <div class="section-heading">
           <p class="eyebrow">Dashboard</p>
           <h2>Indicadores ambientais para decisões rápidas</h2>
+        </div>
+
+        <div class="chart-card">
+          <h3>Selecionar Região</h3>
+
+          <label for="regiao"> Região Monitorada </label>
+
+          <select id="regiao" name="regiao">
+            <option>Porto Alegre</option>
+            <option>São Paulo</option>
+            <option>Manaus</option>
+            <option>Curitiba</option>
+          </select>
         </div>
 
         <div class="metric-grid">
@@ -145,6 +170,45 @@
             </ul>
           </article>
         </div>
+
+        <div class="dashboard-preview">
+          <article class="chart-card">
+            <h3>Comparação de períodos</h3>
+            <div
+              class="compare-panel"
+              aria-label="Comparação de indicadores por período"
+            >
+              <div>
+                <span>Últimas 24h</span>
+                <strong>17 alertas</strong>
+              </div>
+              <div>
+                <span>Semana anterior</span>
+                <strong>11 alertas</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="chart-card">
+            <h3>Ações de relatório</h3>
+            <div class="action-row" aria-label="Ações do relatório ambiental">
+              <button class="button secondary" type="button">
+                Exportar PDF
+              </button>
+              <button class="button secondary" type="button">
+                Compartilhar
+              </button>
+            </div>
+          </article>
+
+          <article class="chart-card">
+            <h3>Tendência identificada</h3>
+            <p>
+              Aumento de focos de calor em áreas rurais com queda de umidade do
+              ar nas últimas 24 horas.
+            </p>
+          </article>
+        </div>
       </section>
 
       <section id="monitoramento" class="section-block">
@@ -181,6 +245,20 @@
             </p>
           </article>
         </div>
+
+        <div class="chart-card">
+          <h3>Registrar Ocorrência Ambiental</h3>
+
+          <form class="mini-form">
+            <input type="text" placeholder="Tipo da ocorrência" />
+
+            <textarea placeholder="Descrição da ocorrência" rows="4"></textarea>
+
+            <button class="button primary" type="submit">
+              Registrar Ocorrência
+            </button>
+          </form>
+        </div>
       </section>
 
       <section id="alertas" class="section-block">
@@ -209,13 +287,49 @@
           </article>
         </div>
 
-        <ol class="flow-list" aria-label="Fluxo de emissão de alertas">
-          <li>Detectar situação de risco</li>
-          <li>Processar alerta automaticamente</li>
-          <li>Classificar nível de perigo</li>
-          <li>Notificar usuários afetados</li>
-          <li>Registrar ocorrência e atualizar dashboard</li>
-        </ol>
+        <div class="dashboard-preview">
+          <article class="chart-card">
+            <h3>Canais de notificação</h3>
+            <div class="toggle-list" aria-label="Preferências de notificação">
+              <label><input type="checkbox" checked /> E-mail</label>
+              <label><input type="checkbox" checked /> SMS</label>
+              <label><input type="checkbox" /> Aplicativo</label>
+              <label
+                ><input type="checkbox" checked /> Comunicado emergencial</label
+              >
+            </div>
+          </article>
+
+          <article class="chart-card wide-card">
+            <h3>Configuração de prioridade</h3>
+
+            <div class="priority-board">
+              <span class="status critical">Crítico: envio imediato</span>
+              <span class="status moderate">Moderado: acompanhamento</span>
+              <span class="status stable">Informativo: registro</span>
+            </div>
+          </article>
+          <article class="chart-card">
+            <h3>Preferências do Usuário</h3>
+
+            <div class="toggle-list">
+              <label>
+                <input type="checkbox" checked />
+                Receber alertas críticos
+              </label>
+
+              <label>
+                <input type="checkbox" checked />
+                Receber relatórios semanais
+              </label>
+
+              <label>
+                <input type="checkbox" />
+                Receber notificações por SMS
+              </label>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section id="mapa" class="section-block">
@@ -318,6 +432,243 @@
             </p>
           </article>
         </div>
+      </section>
+
+      <section id="simulacao" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Simulação e previsão</p>
+          <h2>Cenários ambientais para antecipar impactos</h2>
+          <p>
+            O módulo de simulação permite configurar variáveis ambientais,
+            processar previsões, identificar impactos futuros e registrar
+            resultados para análises posteriores.
+          </p>
+        </div>
+
+        <div class="simulation-layout">
+          <article class="chart-card">
+            <h3>Configurar cenário</h3>
+            <form class="mini-form" action="#" method="get">
+              <label for="cenario">
+                Cenário ambiental
+                <select id="cenario" name="cenario">
+                  <option>Risco de enchente</option>
+                  <option>Propagação de queimada</option>
+                  <option>Seca prolongada</option>
+                </select>
+              </label>
+              <label for="chuva">
+                Chuva acumulada
+                <input
+                  id="chuva"
+                  type="range"
+                  name="chuva"
+                  min="0"
+                  max="100"
+                  value="62"
+                />
+              </label>
+              <label for="vento">
+                Intensidade do vento
+                <input
+                  id="vento"
+                  type="range"
+                  name="vento"
+                  min="0"
+                  max="100"
+                  value="48"
+                />
+              </label>
+              <button class="button primary" type="button">
+                Iniciar simulação
+              </button>
+            </form>
+          </article>
+
+          <article class="chart-card wide-card">
+            <h3>Previsão gerada</h3>
+            <article class="chart-card">
+              <h3>Comparação de Cenários</h3>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Cenário</th>
+                    <th>Impacto</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>Chuva Intensa</td>
+                    <td>Alto</td>
+                  </tr>
+
+                  <tr>
+                    <td>Seca Prolongada</td>
+                    <td>Médio</td>
+                  </tr>
+
+                  <tr>
+                    <td>Queimada</td>
+                    <td>Crítico</td>
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+            <article class="metric-card">
+              <span>Precisão das Previsões</span>
+              <strong>92%</strong>
+              <p>Baseada em análises históricas e dados orbitais.</p>
+            </article>
+            <div class="prediction-grid">
+              <div>
+                <span>Impacto estimado</span>
+                <strong>Alto</strong>
+              </div>
+              <div>
+                <span>Área vulnerável</span>
+                <strong>12 km²</strong>
+              </div>
+              <div>
+                <span>Confiança do modelo</span>
+                <strong>87%</strong>
+              </div>
+            </div>
+            <p>
+              Insight automático: padrões recentes indicam aumento de risco em
+              regiões com baixa drenagem e chuva acima da média.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="administracao" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Gestão administrativa</p>
+          <h2>Controle de usuários, permissões e desempenho do sistema</h2>
+        </div>
+
+        <div class="admin-grid">
+          <article class="chart-card">
+            <h3>Usuários e permissões</h3>
+            <ul class="compact-list">
+              <li>Administrador: acesso total e configuração da plataforma</li>
+              <li>Operador: monitoramento, alertas e ocorrências</li>
+              <li>Morador: informações regionais e notificações</li>
+              <li>Pesquisador: histórico, relatórios e indicadores</li>
+            </ul>
+          </article>
+
+          <article class="chart-card">
+            <h3>Métricas operacionais</h3>
+            <div class="compare-panel">
+              <div>
+                <span>Acessos hoje</span>
+                <strong>1.284</strong>
+              </div>
+              <div>
+                <span>Disponibilidade</span>
+                <strong>99.8%</strong>
+              </div>
+            </div>
+            <article class="metric-card">
+              <span>Alertas Emitidos</span>
+              <strong>1.847</strong>
+              <p>Total de notificações enviadas pelo sistema.</p>
+            </article>
+          </article>
+
+          <article class="chart-card">
+            <h3>Logs do sistema</h3>
+            <ul class="activity-list">
+              <li>10:04 - Permissão atualizada</li>
+              <li>10:22 - Alerta técnico resolvido</li>
+              <li>11:05 - Dados orbitais sincronizados</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="educacao" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Educação Ambiental</p>
+          <h2>Aprenda a identificar e prevenir riscos ambientais</h2>
+          <p>
+            O Selene não apenas monitora o meio ambiente, mas também auxilia na
+            conscientização da população através de conteúdos educativos sobre
+            eventos climáticos e preservação ambiental.
+          </p>
+        </div>
+
+        <div class="card-grid three-columns">
+          <article class="info-card">
+            <span class="status critical">Queimadas</span>
+            <h3>Como prevenir incêndios?</h3>
+            <p>
+              Evite queimadas em áreas abertas, descarte correto de materiais
+              inflamáveis e comunique imediatamente focos de incêndio às
+              autoridades.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="status moderate">Enchentes</span>
+            <h3>Como agir em períodos de chuva intensa?</h3>
+            <p>
+              Evite áreas alagadas, mantenha-se informado por alertas oficiais e
+              tenha um plano de evacuação para situações emergenciais.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="status stable">Secas</span>
+            <h3>Uso consciente da água</h3>
+            <p>
+              Pequenas atitudes como reduzir desperdícios e reutilizar água
+              ajudam a minimizar impactos causados por longos períodos de
+              estiagem.
+            </p>
+          </article>
+        </div>
+
+        <div class="dashboard-preview">
+          <article class="chart-card wide-card">
+            <h3>Dicas de Sustentabilidade</h3>
+            <ul class="check-list">
+              <li>Economize água e energia.</li>
+              <li>Realize descarte correto de resíduos.</li>
+              <li>Preserve áreas verdes e recursos naturais.</li>
+              <li>Acompanhe alertas ambientais da sua região.</li>
+              <li>Participe de ações de conscientização ambiental.</li>
+            </ul>
+          </article>
+
+          <article class="chart-card">
+            <h3>ODS Relacionadas</h3>
+            <ul class="compact-list">
+              <li>ODS 9 – Inovação</li>
+              <li>ODS 11 – Cidades Sustentáveis</li>
+              <li>ODS 13 – Ação Climática</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="sobre" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Sobre o Projeto</p>
+          <h2>Conectando dados orbitais à proteção ambiental</h2>
+        </div>
+
+        <article class="info-card">
+          <p>
+            Selene utiliza dados provenientes de satélites e sensores ambientais
+            para identificar riscos climáticos, gerar alertas automáticos e
+            apoiar a tomada de decisão de órgãos públicos, agricultores e
+            equipes de emergência.
+          </p>
+        </article>
       </section>
 
       <aside class="mission-card">
