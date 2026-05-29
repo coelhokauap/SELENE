@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SELENE é uma plataforma inteligente de monitoramento ambiental baseada em dados orbitais, alertas automáticos, dashboards e mapas interativos."
+    />
+    <title>SELENE</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#hero" aria-label="Voltar para o início">
+        <span class="brand-mark" aria-hidden="true">SE</span>
+        <span>
+          <strong>SELENE</strong>
+          <small>Monitoramento Ambiental</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Menu principal">
+        <ul>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#monitoramento">Monitoramento</a></li>
+          <li><a href="#alertas">Alertas</a></li>
+          <li><a href="#mapa">Mapa</a></li>
+          <li><a href="#telemetria">Telemetria</a></li>
+          <li><a href="#historico">Histórico</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">Monitoramento ambiental via dados espaciais</p>
+          <h1>SELENE</h1>
+          <p>
+            Plataforma inteligente de monitoramento ambiental baseada em dados
+            orbitais, sensoriamento remoto e tecnologia espacial para apoiar a
+            prevenção de desastres e a tomada de decisão em tempo real.
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-label="Resumo operacional">
+          <div>
+            <span>Risco Atual</span>
+            <strong>Alto</strong>
+          </div>
+          <div>
+            <span>Última Atualização</span>
+            <strong>Há 5 Minutos</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section id="acesso" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Acesso</p>
+          <h2>Entrada segura para diferentes perfis de usuário</h2>
+        </div>
+
+        <div class="access-layout">
+          <article class="access-panel">
+            <h3>Acesso à plataforma</h3>
+            <form class="mini-form" action="#" method="get">
+              <label>
+                E-mail
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="usuario@selene.app"
+                />
+              </label>
+              <label>
+                Senha
+                <input type="password" name="senha" placeholder="••••••••" />
+              </label>
+              <div class="form-actions">
+                <button class="button primary" type="submit">Entrar</button>
+                <a href="#requisitos">Recuperar senha</a>
+              </div>
+            </form>
+          </article>
+        </div>
+      </section>
+
+      <section id="dashboard" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Dashboard</p>
+          <h2>Indicadores ambientais para decisões rápidas</h2>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric-card">
+            <span>Regiões Monitoradas</span>
+            <strong>48</strong>
+            <p>Áreas urbanas, agrícolas, remotas e de preservação.</p>
+          </article>
+
+          <article class="metric-card warning">
+            <span>Alertas Ativos</span>
+            <strong>17</strong>
+            <p>Ocorrências com prioridade operacional nas próximas 24 horas.</p>
+          </article>
+
+          <article class="metric-card">
+            <span>Temperatura Média</span>
+            <strong>31.8 °C</strong>
+            <p>Indicador climático consolidado por região observada.</p>
+          </article>
+
+          <article class="metric-card">
+            <span>Umidade do Ar</span>
+            <strong>38%</strong>
+            <p>Base para análise de secas e risco de propagação de fogo.</p>
+          </article>
+        </div>
+
+        <div class="dashboard-preview">
+          <article class="chart-card wide-card">
+            <h3>Tendência de risco ambiental</h3>
+            <div
+              class="bar-chart"
+              aria-label="Gráfico comparativo de risco por evento"
+            >
+              <span style="--value: 76%">Queimadas</span>
+              <span style="--value: 62%">Enchentes</span>
+              <span style="--value: 48%">Secas</span>
+              <span style="--value: 34%">Deslizamentos</span>
+            </div>
+          </article>
+
+          <article class="chart-card">
+            <h3>Filtros ativos</h3>
+            <ul class="tag-list">
+              <li>Região Sul</li>
+              <li>Últimas 24h</li>
+              <li>Prioridade alta</li>
+              <li>Dados orbitais</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="monitoramento" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Monitoramento</p>
+          <h2>Eventos críticos acompanhados em tempo real</h2>
+        </div>
+
+        <div class="card-grid three-columns">
+          <article class="info-card">
+            <span class="status critical">Crítico</span>
+            <h3>Queimadas</h3>
+            <p>
+              Identificação de focos de calor, direção de vento e proximidade de
+              áreas habitadas ou protegidas.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="status moderate">Atenção</span>
+            <h3>Enchentes</h3>
+            <p>
+              Cruzamento de chuva acumulada, nível de rios e relevo para
+              antecipar pontos de alagamento.
+            </p>
+          </article>
+
+          <article class="info-card">
+            <span class="status stable">Estável</span>
+            <h3>Secas</h3>
+            <p>
+              Análise de umidade, temperatura do solo e histórico de estiagem
+              para priorizar resposta preventiva.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="alertas" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Alertas</p>
+          <h2>Classificação automática por gravidade e localização</h2>
+        </div>
+
+        <div class="card-grid two-columns">
+          <article class="alert-card critical">
+            <span>Alerta Crítico</span>
+            <h3>Foco de queimada em expansão</h3>
+            <p>
+              Anomalia térmica detectada com vento favorável à propagação.
+              Recomendação: acionar Defesa Civil e brigada regional.
+            </p>
+          </article>
+
+          <article class="alert-card moderate">
+            <span>Alerta Moderado</span>
+            <h3>Risco de enchente urbana</h3>
+            <p>
+              Chuva intensa prevista para microbacia já saturada. Recomendação:
+              monitorar vias baixas e pontos de escoamento.
+            </p>
+          </article>
+        </div>
+
+        <ol class="flow-list" aria-label="Fluxo de emissão de alertas">
+          <li>Detectar situação de risco</li>
+          <li>Processar alerta automaticamente</li>
+          <li>Classificar nível de perigo</li>
+          <li>Notificar usuários afetados</li>
+          <li>Registrar ocorrência e atualizar dashboard</li>
+        </ol>
+      </section>
+
+      <section id="mapa" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Mapa</p>
+          <h2>Visualização geográfica das regiões monitoradas</h2>
+        </div>
+
+        <figure class="map-card">
+          <div
+            class="map-visual"
+            role="img"
+            aria-label="Mapa estilizado com áreas monitoradas"
+          >
+            <span class="map-point fire">Queimada</span>
+            <span class="map-point flood">Enchente</span>
+            <span class="map-point drought">Seca</span>
+            <span class="map-point slide">Deslizamento</span>
+          </div>
+          <figcaption>
+            Áreas monitoradas por dados orbitais, sensores terrestres, APIs
+            climáticas e modelos preditivos.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="telemetria" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Telemetria</p>
+          <h2>Fontes ambientais validadas antes do processamento</h2>
+        </div>
+
+        <article class="table-card">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Fonte</th>
+                  <th scope="col">Parâmetro</th>
+                  <th scope="col">Uso no SELENE</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Atualização</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sat-Aqua</td>
+                  <td>Focos de calor</td>
+                  <td>Detecção de queimadas</td>
+                  <td><span class="pill danger">Instável</span></td>
+                  <td>2 min</td>
+                </tr>
+                <tr>
+                  <td>Sentinel-2</td>
+                  <td>Umidade do solo</td>
+                  <td>Risco de seca</td>
+                  <td><span class="pill ok">Normal</span></td>
+                  <td>8 min</td>
+                </tr>
+                <tr>
+                  <td>GOES-16</td>
+                  <td>Nuvens e chuva</td>
+                  <td>Previsão de enchentes</td>
+                  <td><span class="pill attention">Atenção</span></td>
+                  <td>5 min</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section id="historico" class="section-block">
+        <div class="section-heading">
+          <p class="eyebrow">Histórico</p>
+          <h2>Ocorrências ambientais registradas para consulta futura</h2>
+        </div>
+
+        <div class="timeline">
+          <article>
+            <span>08:45</span>
+            <h3>Queimada detectada</h3>
+            <p>
+              Foco identificado em zona rural com resposta enviada para equipe
+              local.
+            </p>
+          </article>
+          <article>
+            <span>10:20</span>
+            <h3>Risco de enchente</h3>
+            <p>
+              Volume de chuva acima do previsto em área de drenagem sensível.
+            </p>
+          </article>
+          <article>
+            <span>11:05</span>
+            <h3>Relatório gerado</h3>
+            <p>
+              Resumo regional exportado para análise estratégica e auditoria.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <aside class="mission-card">
+        <div>
+          <p class="eyebrow">Missão</p>
+          <h2>Transformar dados espaciais em proteção ambiental.</h2>
+        </div>
+        <p>
+          SELENE apoia Defesa Civil, órgãos públicos, agricultores, comunidades
+          e pesquisadores com informações confiáveis para proteger vidas,
+          recursos e o planeta.
+        </p>
+      </aside>
+    </main>
+
+    <footer>
+      <p>SELENE - Global Solution 2026</p>
+      <p>FIAP - Engenharia de Software | 1ESSPR-2026</p>
+      <p>Anita Palhares | Kauã Coelho | Vitória Kereski</p>
+    </footer>
+  </body>
+</html>
