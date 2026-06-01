@@ -7,20 +7,19 @@
       name="description"
       content="SELENE é uma plataforma inteligente de monitoramento ambiental baseada em dados orbitais, alertas automáticos, dashboards e mapas interativos."
     />
-    <title>SELENE</title>
+    <title>SELENE | Monitoramento Ambiental Orbital</title>
     <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
   </head>
-
   <body>
     <header class="site-header">
       <a class="brand" href="#hero" aria-label="Voltar para o início">
         <span class="brand-mark" aria-hidden="true">SE</span>
         <span>
           <strong>SELENE</strong>
-          <small>Monitoramento ambiental</small>
+          <small>Monitoramento ambiental orbital</small>
         </span>
       </a>
-
       <nav class="site-nav" aria-label="Menu principal">
         <ul>
           <li><a href="#dashboard">Dashboard</a></li>
@@ -34,7 +33,6 @@
         </ul>
       </nav>
     </header>
-
     <main>
       <section id="hero" class="hero">
         <div class="hero-content">
@@ -46,7 +44,6 @@
             prevenção de desastres e a tomada de decisão em tempo real.
           </p>
         </div>
-
         <aside class="hero-panel" aria-label="Resumo operacional">
           <div>
             <span>Risco atual</span>
@@ -58,13 +55,11 @@
           </div>
         </aside>
       </section>
-
       <section id="sobre" class="section-block">
         <div class="section-heading">
           <p class="eyebrow">Sobre</p>
           <h2>Conectando dados orbitais à proteção ambiental</h2>
         </div>
-
         <article class="info-card">
           <p>
             Selene utiliza dados provenientes de satélites e sensores ambientais
@@ -74,13 +69,11 @@
           </p>
         </article>
       </section>
-
       <section id="acesso" class="section-block">
         <div class="section-heading">
           <p class="eyebrow">Acesso</p>
           <h2>Entrada segura para diferentes perfis de usuário</h2>
         </div>
-
         <div class="access-layout">
           <article class="access-panel">
             <h3>Acesso à plataforma</h3>
@@ -115,52 +108,43 @@
           </article>
         </div>
       </section>
-
       <section id="dashboard" class="section-block">
         <div class="section-heading">
           <p class="eyebrow">Dashboard</p>
           <h2>Indicadores ambientais para decisões rápidas</h2>
         </div>
-
-        <div class="chart-card">
+        <article class="chart-card">
           <h3>Selecionar Região</h3>
-
           <label for="regiao"> Região Monitorada </label>
-
           <select id="regiao" name="regiao">
             <option>Porto Alegre</option>
             <option>São Paulo</option>
             <option>Manaus</option>
             <option>Curitiba</option>
           </select>
-        </div>
-
+        </article>
         <div class="metric-grid">
           <article class="metric-card">
             <span>Regiões Monitoradas</span>
             <strong>48</strong>
             <p>Áreas urbanas, agrícolas, remotas e de preservação.</p>
           </article>
-
           <article class="metric-card warning">
             <span>Alertas Ativos</span>
             <strong>17</strong>
             <p>Ocorrências com prioridade operacional nas próximas 24 horas.</p>
           </article>
-
           <article class="metric-card">
             <span>Temperatura Média</span>
             <strong>31.8 °C</strong>
             <p>Indicador climático consolidado por região observada.</p>
           </article>
-
           <article class="metric-card">
             <span>Umidade do Ar</span>
             <strong>38%</strong>
             <p>Base para análise de secas e risco de propagação de fogo.</p>
           </article>
         </div>
-
         <div class="dashboard-preview">
           <article class="chart-card wide-card">
             <h3>Tendência de risco ambiental</h3>
@@ -174,7 +158,6 @@
               <span style="--value: 34%">Deslizamentos</span>
             </div>
           </article>
-
           <article class="chart-card">
             <h3>Filtros ativos</h3>
             <ul class="tag-list">
@@ -185,7 +168,6 @@
             </ul>
           </article>
         </div>
-
         <div class="dashboard-preview">
           <article class="chart-card">
             <h3>Comparação de períodos</h3>
@@ -203,7 +185,6 @@
               </div>
             </div>
           </article>
-
           <article class="chart-card">
             <h3>Ações de relatório</h3>
             <div class="action-row" aria-label="Ações do relatório ambiental">
@@ -215,7 +196,6 @@
               </button>
             </div>
           </article>
-
           <article class="chart-card">
             <h3>Tendência identificada</h3>
             <p>
@@ -225,13 +205,11 @@
           </article>
         </div>
       </section>
-
       <section id="monitoramento" class="section-block">
         <div class="section-heading">
           <p class="eyebrow">Monitoramento</p>
           <h2>Eventos críticos acompanhados em tempo real</h2>
         </div>
-
         <div class="card-grid three-columns">
           <article class="info-card">
             <span class="status critical">Crítico</span>
@@ -241,7 +219,6 @@
               áreas habitadas ou protegidas.
             </p>
           </article>
-
           <article class="info-card">
             <span class="status moderate">Atenção</span>
             <h3>Enchentes</h3>
@@ -250,7 +227,6 @@
               antecipar pontos de alagamento.
             </p>
           </article>
-
           <article class="info-card">
             <span class="status stable">Estável</span>
             <h3>Secas</h3>
@@ -260,28 +236,40 @@
             </p>
           </article>
         </div>
-
         <div class="chart-card">
           <h3>Registrar Ocorrência Ambiental</h3>
-
-          <form class="mini-form">
-            <input type="text" placeholder="Tipo da ocorrência" />
-
-            <textarea placeholder="Descrição da ocorrência" rows="4"></textarea>
-
+          <form class="mini-form" action="#" method="post">
+            <label for="tipo-ocorrencia">
+              Tipo da ocorrência
+              <input
+                id="tipo-ocorrencia"
+                type="text"
+                name="tipo-ocorrencia"
+                placeholder="Ex: queimada, enchente, seca"
+                required
+              />
+            </label>
+            <label for="descricao-ocorrencia">
+              Descrição da ocorrência
+              <textarea
+                id="descricao-ocorrencia"
+                name="descricao-ocorrencia"
+                placeholder="Descreva a ocorrência detectada"
+                rows="4"
+                required
+              ></textarea>
+            </label>
             <button class="button primary" type="submit">
               Registrar Ocorrência
             </button>
           </form>
         </div>
       </section>
-
       <section id="alertas" class="section-block">
         <div class="section-heading">
           <p class="eyebrow">Alertas</p>
           <h2>Classificação automática por gravidade e localização</h2>
         </div>
-
         <div class="card-grid two-columns">
           <article class="alert-card critical">
             <span>Alerta Crítico</span>
@@ -291,7 +279,6 @@
               Recomendação: acionar Defesa Civil e brigada regional.
             </p>
           </article>
-
           <article class="alert-card moderate">
             <span>Alerta Moderado</span>
             <h3>Risco de enchente urbana</h3>
@@ -301,7 +288,6 @@
             </p>
           </article>
         </div>
-
         <div class="dashboard-preview">
           <article class="chart-card">
             <h3>Canais de notificação</h3>
@@ -314,21 +300,17 @@
               >
             </div>
           </article>
-
           <article class="chart-card">
             <h3>Preferências do Usuário</h3>
-
             <div class="toggle-list">
               <label>
                 <input type="checkbox" checked />
                 Receber alertas críticos
               </label>
-
               <label>
                 <input type="checkbox" checked />
                 Receber relatórios semanais
               </label>
-
               <label>
                 <input type="checkbox" />
                 Receber notificações por SMS
@@ -337,13 +319,11 @@
           </article>
         </div>
       </section>
-
       <section id="mapa" class="section-block">
         <div class="section-heading">
           <p class="eyebrow">Mapa</p>
           <h2>Visualização geográfica das regiões monitoradas</h2>
         </div>
-
         <figure class="map-card">
           <div
             class="map-visual"
@@ -361,13 +341,11 @@
           </figcaption>
         </figure>
       </section>
-
       <section id="telemetria" class="section-block">
         <div class="section-heading">
           <p class="eyebrow">Telemetria</p>
           <h2>Fontes ambientais validadas antes do processamento</h2>
         </div>
-
         <article class="table-card">
           <div class="table-wrap">
             <table>
@@ -407,13 +385,11 @@
           </div>
         </article>
       </section>
-
       <section id="historico" class="section-block">
         <div class="section-heading">
           <p class="eyebrow">Histórico</p>
           <h2>Ocorrências ambientais registradas para consulta futura</h2>
         </div>
-
         <div class="timeline">
           <article>
             <span>08:45</span>
@@ -439,7 +415,6 @@
           </article>
         </div>
       </section>
-
       <section id="simulacao" class="section-block">
         <div class="section-heading">
           <p class="eyebrow">Simulação</p>
@@ -450,7 +425,6 @@
             resultados para análises posteriores.
           </p>
         </div>
-
         <div class="simulation-layout">
           <article class="chart-card">
             <h3>Configurar cenário</h3>
@@ -490,12 +464,10 @@
               </button>
             </form>
           </article>
-
           <article class="chart-card wide-card">
             <h3>Previsão gerada</h3>
-            <article class="chart-card">
+            <div class="chart-card">
               <h3>Comparação de Cenários</h3>
-
               <table>
                 <thead>
                   <tr>
@@ -503,30 +475,27 @@
                     <th>Impacto</th>
                   </tr>
                 </thead>
-
                 <tbody>
                   <tr>
                     <td>Chuva Intensa</td>
                     <td>Alto</td>
                   </tr>
-
                   <tr>
                     <td>Seca Prolongada</td>
                     <td>Médio</td>
                   </tr>
-
                   <tr>
                     <td>Queimada</td>
                     <td>Crítico</td>
                   </tr>
                 </tbody>
               </table>
-            </article>
-            <article class="metric-card">
+            </div>
+            <div class="metric-card">
               <span>Precisão das Previsões</span>
               <strong>92%</strong>
               <p>Baseada em análises históricas e dados orbitais.</p>
-            </article>
+            </div>
             <div class="prediction-grid">
               <div>
                 <span>Impacto estimado</span>
@@ -548,13 +517,11 @@
           </article>
         </div>
       </section>
-
       <section id="administracao" class="section-block">
         <div class="section-heading">
           <p class="eyebrow">Administração</p>
           <h2>Controle de usuários, permissões e desempenho do sistema</h2>
         </div>
-
         <div class="admin-grid">
           <article class="chart-card">
             <h3>Usuários e permissões</h3>
@@ -565,7 +532,6 @@
               <li>Pesquisador: histórico, relatórios e indicadores</li>
             </ul>
           </article>
-
           <article class="chart-card">
             <h3>Métricas operacionais</h3>
             <div class="compare-panel">
@@ -578,13 +544,12 @@
                 <strong>99.8%</strong>
               </div>
             </div>
-            <article class="metric-card">
+            <div class="metric-card">
               <span>Alertas Emitidos</span>
               <strong>1.847</strong>
               <p>Total de notificações enviadas pelo sistema.</p>
-            </article>
+            </div>
           </article>
-
           <article class="chart-card">
             <h3>Logs do sistema</h3>
             <ul class="activity-list">
@@ -595,7 +560,6 @@
           </article>
         </div>
       </section>
-
       <section id="educacao" class="section-block">
         <div class="section-heading">
           <p class="eyebrow">Educação</p>
@@ -606,7 +570,6 @@
             eventos climáticos e preservação ambiental.
           </p>
         </div>
-
         <div class="card-grid three-columns">
           <article class="info-card">
             <span class="status critical">Queimadas</span>
@@ -617,7 +580,6 @@
               autoridades.
             </p>
           </article>
-
           <article class="info-card">
             <span class="status moderate">Enchentes</span>
             <h3>Como agir em períodos de chuva intensa?</h3>
@@ -626,7 +588,6 @@
               tenha um plano de evacuação para situações emergenciais.
             </p>
           </article>
-
           <article class="info-card">
             <span class="status stable">Secas</span>
             <h3>Uso consciente da água</h3>
@@ -637,7 +598,6 @@
             </p>
           </article>
         </div>
-
         <div class="dashboard-preview">
           <article class="chart-card wide-card">
             <h3>Dicas de Sustentabilidade</h3>
@@ -649,7 +609,6 @@
               <li>Participe de ações de conscientização ambiental.</li>
             </ul>
           </article>
-
           <article class="chart-card">
             <h3>ODS Relacionadas</h3>
             <ul class="compact-list">
@@ -660,7 +619,6 @@
           </article>
         </div>
       </section>
-
       <aside class="mission-card">
         <div>
           <p class="eyebrow">Missão</p>
@@ -673,7 +631,6 @@
         </p>
       </aside>
     </main>
-
     <footer>
       <p>SELENE - Global Solution 2026</p>
       <p>FIAP - Engenharia de Software | 1ESSPR-2026</p>
