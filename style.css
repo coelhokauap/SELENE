@@ -159,10 +159,15 @@ footer,
   padding: 0.55rem 0.8rem;
   text-decoration: none;
   border-radius: 10px;
+  transition: color 0.2s, background 0.2s;
 }
 .site-nav a:hover {
   color: var(--primary);
   background: #eef2ff;
+}
+.site-nav a:focus-visible {
+  outline: 3px solid rgba(81, 109, 255, 0.4);
+  outline-offset: 2px;
 }
 main {
   width: min(1120px, calc(100% - 2rem));
@@ -359,13 +364,15 @@ main {
 }
 .mini-form {
   margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
 }
 .mini-form label {
-  display: grid;
-  gap: 0.4rem;
+  display: block;
   color: var(--muted);
   font-size: 0.92rem;
   font-weight: 700;
+  margin-bottom: 0.4rem;
 }
 input,
 select,
@@ -376,6 +383,9 @@ textarea {
   border: 1px solid var(--border);
   border-radius: 10px;
   background: #fff;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 textarea {
   resize: vertical;
@@ -409,15 +419,20 @@ textarea:focus {
   border: 1px solid var(--border);
   border-radius: 10px;
   background: #fff;
+  transition: filter 0.2s, background 0.2s;
 }
 .button.primary {
   color: #fff;
   border-color: var(--primary);
   background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
-.button.secondary:hover,
+.button:hover,
 .button.primary:hover {
   filter: brightness(0.96);
+}
+.button:focus-visible {
+  outline: 3px solid rgba(81, 109, 255, 0.4);
+  outline-offset: 2px;
 }
 .toast {
   position: fixed;
