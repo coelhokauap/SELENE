@@ -1,19 +1,11 @@
 # SELENE
 
-### Monitoramento Ambiental Inteligente via Dados Espaciais
+### Monitoramento Ambiental
 ---
 
 # Global Solution 2026
 
 Projeto desenvolvido para a Global Solution da FIAP com o objetivo de aplicar conceitos da indústria espacial na resolução de problemas ambientais por meio do monitoramento inteligente baseado em dados orbitais.
-
----
-
-# Integrantes
-
-- Anita Palhares
-- Kauã Coelho
-- Vitória Kereski
 
 ---
 
@@ -426,6 +418,14 @@ SELENE
 A aplicação encontra-se disponível através do GitHub Pages:
 
 https://coelhokauap.github.io/SELENE/
+
+---
+
+# Integrantes
+
+- Anita Palhares
+- Kauã Coelho
+- Vitória Kereski
 
 ---
 
