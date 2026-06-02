@@ -1,19 +1,6 @@
-<div align="center">
-
-# 🌎 SELENE
+# SELENE
 
 ### Monitoramento Ambiental Inteligente via Dados Espaciais
-
-<img src="https://skillicons.dev/icons?i=html,css,js,git,github,vscode&theme=light" />
-
-<br>
-
-[🔗 Acessar Projeto](https://coelhokauap.github.io/SELENE/)
-&nbsp;&nbsp;|&nbsp;&nbsp;
-[📂 Repositório](https://github.com/coelhokauap/SELENE)
-
-</div>
-
 ---
 
 # Global Solution 2026
@@ -38,7 +25,11 @@ A solução transforma dados provenientes de satélites em informações acessí
 
 ---
 
-# FRONT-END DESIGN (FED)
+# FRONT-END DESIGN
+
+<img src="https://skillicons.dev/icons?i=html,css,git,github,vscode&theme=light" />
+
+---
 
 ## Problema que a Interface Busca Resolver
 
@@ -156,26 +147,9 @@ A solução demonstra como tecnologias originalmente desenvolvidas para aplicaç
 
 ---
 
-# WEB DEVELOPMENT (WD)
+# WEB DEVELOPMENT
 
-## Stack Tecnológica
-
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=html,css,js,git,github,vscode&theme=light" />
-
-</div>
-
-| Tecnologia   | Utilização                       |
-| ------------ | -------------------------------- |
-| HTML5        | Estrutura semântica da aplicação |
-| CSS3         | Estilização e responsividade     |
-| JavaScript   | Interatividade, DOM e BOM        |
-| JSON         | Simulação de dados orbitais      |
-| Git          | Controle de versão               |
-| GitHub       | Hospedagem do código             |
-| GitHub Pages | Publicação da aplicação          |
-| VS Code      | Desenvolvimento                  |
+<img src="https://skillicons.dev/icons?i=js,git,github,vscode&theme=light" />
 
 ---
 
