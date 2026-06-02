@@ -35,11 +35,11 @@ function dashboard() {
   };
   regiao.addEventListener("change", () => {
     const [alertas, temperatura, umidade] = dados[regiao.value];
-    [metricas[1].textContent, metricas[2].textContent, metricas[3].textContent] = [
-      alertas,
-      temperatura,
-      umidade,
-    ];
+    [
+      metricas[1].textContent,
+      metricas[2].textContent,
+      metricas[3].textContent,
+    ] = [alertas, temperatura, umidade];
     toast(`Região alterada para ${regiao.value}`);
   });
 }
@@ -62,7 +62,12 @@ function simulacao() {
   $("#simulacao .button.primary")?.addEventListener("click", () => {
     const chuva = Number($("#chuva").value);
     const vento = Number($("#vento").value);
-    const resultado = chuva > 85 && vento > 85 ? "Crítico" : chuva > 70 || vento > 70 ? "Alto" : "Baixo";
+    const resultado =
+      chuva > 85 && vento > 85
+        ? "Crítico"
+        : chuva > 70 || vento > 70
+          ? "Alto"
+          : "Baixo";
     $(".prediction-grid strong").textContent = resultado;
     toast(`Simulação concluída: ${resultado}`);
   });
