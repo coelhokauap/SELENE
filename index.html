@@ -9,7 +9,6 @@
     />
     <title>SELENE | Monitoramento Ambiental Orbital</title>
     <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -78,9 +77,8 @@
           <article class="access-panel">
             <h3>Acesso à plataforma</h3>
             <form class="mini-form" action="#" method="post">
-              <label for="email">
-                E-mail
-                <input
+              <label for="email">E-mail</label>
+              <input
                   id="email"
                   type="email"
                   name="email"
@@ -88,10 +86,8 @@
                   autocomplete="email"
                   required
                 />
-              </label>
-              <label for="senha">
-                Senha
-                <input
+              <label for="senha">Senha</label>
+              <input
                   id="senha"
                   type="password"
                   name="senha"
@@ -99,7 +95,6 @@
                   autocomplete="current-password"
                   required
                 />
-              </label>
               <div class="form-actions">
                 <button class="button primary" type="submit">Entrar</button>
                 <a href="#acesso">Recuperar senha</a>
@@ -115,7 +110,7 @@
         </div>
         <article class="chart-card">
           <h3>Selecionar Região</h3>
-          <label for="regiao"> Região Monitorada </label>
+          <label for="regiao">Região Monitorada</label>
           <select id="regiao" name="regiao">
             <option>Porto Alegre</option>
             <option>São Paulo</option>
@@ -239,26 +234,22 @@
         <div class="chart-card">
           <h3>Registrar Ocorrência Ambiental</h3>
           <form class="mini-form" action="#" method="post">
-            <label for="tipo-ocorrencia">
-              Tipo da ocorrência
-              <input
+            <label for="tipo-ocorrencia">Tipo da ocorrência</label>
+            <input
                 id="tipo-ocorrencia"
                 type="text"
                 name="tipo-ocorrencia"
                 placeholder="Ex: queimada, enchente, seca"
                 required
               />
-            </label>
-            <label for="descricao-ocorrencia">
-              Descrição da ocorrência
-              <textarea
+            <label for="descricao-ocorrencia">Descrição da ocorrência</label>
+            <textarea
                 id="descricao-ocorrencia"
                 name="descricao-ocorrencia"
                 placeholder="Descreva a ocorrência detectada"
                 rows="4"
                 required
               ></textarea>
-            </label>
             <button class="button primary" type="submit">
               Registrar Ocorrência
             </button>
@@ -429,17 +420,14 @@
           <article class="chart-card">
             <h3>Configurar cenário</h3>
             <form class="mini-form" action="#" method="get">
-              <label for="cenario">
-                Cenário ambiental
-                <select id="cenario" name="cenario">
+              <label for="cenario">Cenário ambiental</label>
+              <select id="cenario" name="cenario">
                   <option>Risco de enchente</option>
                   <option>Propagação de queimada</option>
                   <option>Seca prolongada</option>
                 </select>
-              </label>
-              <label for="chuva">
-                Chuva acumulada
-                <input
+              <label for="chuva">Chuva acumulada</label>
+              <input
                   id="chuva"
                   type="range"
                   name="chuva"
@@ -447,10 +435,8 @@
                   max="100"
                   value="62"
                 />
-              </label>
-              <label for="vento">
-                Intensidade do vento
-                <input
+              <label for="vento">Intensidade do vento</label>
+              <input
                   id="vento"
                   type="range"
                   name="vento"
@@ -458,7 +444,6 @@
                   max="100"
                   value="48"
                 />
-              </label>
               <button class="button primary" type="button">
                 Iniciar simulação
               </button>
@@ -636,5 +621,7 @@
       <p>FIAP - Engenharia de Software | 1ESSPR-2026</p>
       <p>Anita Palhares | Kauã Coelho | Vitória Kereski</p>
     </footer>
+
+    <script src="./script.js"></script>
   </body>
 </html>
