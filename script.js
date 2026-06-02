@@ -1,14 +1,47 @@
 // SELENE - Sistema de Monitoramento Ambiental Orbital
 // Interatividade com DOM, BOM e JavaScript
 
-let estadoSimulacao = { ativo: false, latencia: 0, ultimaAtualizacao: null, alertasAtivos: 0 };
+let estadoSimulacao = {
+  ativo: false,
+  latencia: 0,
+  ultimaAtualizacao: null,
+  alertasAtivos: 0,
+};
 let dadosSelene = null;
 
 const dadosRegionais = {
-  "Porto Alegre": { alertas: 17, temperatura: "31.8 °C", umidade: "38%", risco: "Moderado", latitude: -30.03, longitude: -51.23 },
-  "São Paulo": { alertas: 22, temperatura: "29.4 °C", umidade: "52%", risco: "Alto", latitude: -23.55, longitude: -46.63 },
-  Manaus: { alertas: 12, temperatura: "34.6 °C", umidade: "78%", risco: "Baixo", latitude: -3.1, longitude: -60.02 },
-  Curitiba: { alertas: 9, temperatura: "24.1 °C", umidade: "61%", risco: "Moderado", latitude: -25.42, longitude: -49.27 },
+  "Porto Alegre": {
+    alertas: 17,
+    temperatura: "31.8 °C",
+    umidade: "38%",
+    risco: "Moderado",
+    latitude: -30.03,
+    longitude: -51.23,
+  },
+  "São Paulo": {
+    alertas: 22,
+    temperatura: "29.4 °C",
+    umidade: "52%",
+    risco: "Alto",
+    latitude: -23.55,
+    longitude: -46.63,
+  },
+  Manaus: {
+    alertas: 12,
+    temperatura: "34.6 °C",
+    umidade: "78%",
+    risco: "Baixo",
+    latitude: -3.1,
+    longitude: -60.02,
+  },
+  Curitiba: {
+    alertas: 9,
+    temperatura: "24.1 °C",
+    umidade: "61%",
+    risco: "Moderado",
+    latitude: -25.42,
+    longitude: -49.27,
+  },
 };
 
 // Seletores simplificados (BOM - DOM selection)
@@ -31,7 +64,7 @@ function toast(txt, dur = 3000) {
 // Carregar dados JSON (BOM - Fetch API com latência)
 async function carregarDadosSelene() {
   try {
-    await new Promise(r => setTimeout(r, 500));
+    await new Promise((r) => setTimeout(r, 500));
     const res = await fetch("./dados_selene.json");
     if (!res.ok) throw new Error("Erro ao carregar dados");
     dadosSelene = await res.json();
@@ -135,7 +168,11 @@ function atualizarStatusRisco(n) {
   const hp = $(".hero-panel div");
   if (!hp) return;
   hp.className = "";
-  const cores = { Crítico: "var(--danger)", Alto: "var(--warning)", Moderado: "var(--success)" };
+  const cores = {
+    Crítico: "var(--danger)",
+    Alto: "var(--warning)",
+    Moderado: "var(--success)",
+  };
   hp.style.borderLeft = `4px solid ${cores[n] || cores.Moderado}`;
   hp.querySelector("strong").textContent = n;
 }
@@ -175,25 +212,61 @@ function ocorrencias() {
 function simulacao() {
   const btn = $$("#simulacao .button.primary")[0];
   if (!btn) return;
-  const ic = $("#chuva"), iv = $("#vento"), cs = $("#cenario");
+  const ic = $("#chuva"),
+    iv = $("#vento"),
+    cs = $("#cenario");
   btn.addEventListener("click", () => {
-    const c = Number(ic.value), v = Number(iv.value), s = cs.value;
+    const c = Number(ic.value),
+      v = Number(iv.value),
+      s = cs.value;
     toast("🔄 Inicializando simulação...");
     estadoSimulacao.ativo = true;
     setTimeout(() => {
-      let imp = "Baixo", conf = 75, area = "5 km²";
+      let imp = "Baixo",
+        conf = 75,
+        area = "5 km²";
       if (s === "Risco de enchente") {
-        if (c > 85 && v > 70) { imp = "Crítico"; conf = 95; area = "25 km²"; }
-        else if (c > 70 || v > 60) { imp = "Alto"; conf = 88; area = "15 km²"; }
-        else if (c > 50) { imp = "Moderado"; conf = 82; area = "8 km²"; }
+        if (c > 85 && v > 70) {
+          imp = "Crítico";
+          conf = 95;
+          area = "25 km²";
+        } else if (c > 70 || v > 60) {
+          imp = "Alto";
+          conf = 88;
+          area = "15 km²";
+        } else if (c > 50) {
+          imp = "Moderado";
+          conf = 82;
+          area = "8 km²";
+        }
       } else if (s === "Propagação de queimada") {
-        if (c < 30 && v > 80) { imp = "Crítico"; conf = 92; area = "30 km²"; }
-        else if (c < 50 && v > 60) { imp = "Alto"; conf = 87; area = "18 km²"; }
-        else if (v > 40) { imp = "Moderado"; conf = 80; area = "10 km²"; }
+        if (c < 30 && v > 80) {
+          imp = "Crítico";
+          conf = 92;
+          area = "30 km²";
+        } else if (c < 50 && v > 60) {
+          imp = "Alto";
+          conf = 87;
+          area = "18 km²";
+        } else if (v > 40) {
+          imp = "Moderado";
+          conf = 80;
+          area = "10 km²";
+        }
       } else if (s === "Seca prolongada") {
-        if (c < 20 && v > 70) { imp = "Crítico"; conf = 90; area = "40 km²"; }
-        else if (c < 40) { imp = "Alto"; conf = 85; area = "22 km²"; }
-        else if (c < 60) { imp = "Moderado"; conf = 78; area = "12 km²"; }
+        if (c < 20 && v > 70) {
+          imp = "Crítico";
+          conf = 90;
+          area = "40 km²";
+        } else if (c < 40) {
+          imp = "Alto";
+          conf = 85;
+          area = "22 km²";
+        } else if (c < 60) {
+          imp = "Moderado";
+          conf = 78;
+          area = "12 km²";
+        }
       }
       const pg = $$(".prediction-grid div");
       if (pg[0]) pg[0].querySelector("strong").textContent = imp;
@@ -201,17 +274,25 @@ function simulacao() {
       if (pg[2]) pg[2].querySelector("strong").textContent = `${conf}%`;
       toast(`✓ Simulação: Impacto ${imp}`);
       if (imp === "Crítico") {
-        setTimeout(() => alert(`⚠ ALERTA CRÍTICO!\n\nCenário: ${s}\nImpacto: ${imp}\nÁrea: ${area}\n\nDefesa Civil foi notificada.`), 500);
+        setTimeout(
+          () =>
+            alert(
+              `⚠ ALERTA CRÍTICO!\n\nCenário: ${s}\nImpacto: ${imp}\nÁrea: ${area}\n\nDefesa Civil foi notificada.`,
+            ),
+          500,
+        );
       }
       estadoSimulacao.ativo = false;
     }, 2000);
   });
   ic.addEventListener("input", (e) => {
-    const l = ic.parentElement.querySelector("label") || document.createElement("span");
+    const l =
+      ic.parentElement.querySelector("label") || document.createElement("span");
     l.textContent = `Chuva acumulada: ${e.target.value}%`;
   });
   iv.addEventListener("input", (e) => {
-    const l = iv.parentElement.querySelector("label") || document.createElement("span");
+    const l =
+      iv.parentElement.querySelector("label") || document.createElement("span");
     l.textContent = `Intensidade do vento: ${e.target.value}%`;
   });
 }
@@ -309,12 +390,19 @@ function iniciarMonitoramento() {
 // Mapa interativo (Event listeners, DOM manipulation)
 function mapaInterativo() {
   const pontos = $$(".map-point");
-  const nomes = { fire: "Queimada", flood: "Enchente", drought: "Seca", slide: "Deslizamento" };
+  const nomes = {
+    fire: "Queimada",
+    flood: "Enchente",
+    drought: "Seca",
+    slide: "Deslizamento",
+  };
   pontos.forEach((p) => {
     p.style.cursor = "pointer";
-    p.addEventListener("click", () => toast(`📍 ${nomes[p.classList[1]]} detectada`));
-    p.addEventListener("mouseenter", () => p.style.transform = "scale(1.2)");
-    p.addEventListener("mouseleave", () => p.style.transform = "scale(1)");
+    p.addEventListener("click", () =>
+      toast(`📍 ${nomes[p.classList[1]]} detectada`),
+    );
+    p.addEventListener("mouseenter", () => (p.style.transform = "scale(1.2)"));
+    p.addEventListener("mouseleave", () => (p.style.transform = "scale(1)"));
   });
 }
 
